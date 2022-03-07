@@ -1,0 +1,17 @@
+total 24
+drwxr-xr-x 1 VODINA EFEM 197121   0 Mar  7 18:55 ./
+drwxr-xr-x 1 VODINA EFEM 197121   0 Mar  7 10:40 ../
+-rwxr-xr-x 1 VODINA EFEM 197121  27 Mar  7 12:10 0-hello_world*
+-rwxr-xr-x 1 VODINA EFEM 197121  20 Mar  7 18:45 1-confused_smiley*
+-rwxr-xr-x 1 VODINA EFEM 197121  36 Mar  7 18:46 14-findthatword*
+-rwxr-xr-x 1 VODINA EFEM 197121  43 Mar  7 18:46 15-countthatword*
+-rwxr-xr-x 1 VODINA EFEM 197121  38 Mar  7 18:46 17-hidethisword*
+-rwxr-xr-x 1 VODINA EFEM 197121  31 Mar  7 18:46 2-hellofile*
+-rwxr-xr-x 1 VODINA EFEM 197121  42 Mar  7 18:46 3-twofiles*
+-rwxr-xr-x 1 VODINA EFEM 197121  35 Mar  7 18:46 4-lastlines*
+-rwxr-xr-x 1 VODINA EFEM 197121  35 Mar  7 18:46 5-firstlines*
+-rwxr-xr-x 1 VODINA EFEM 197121  38 Mar  7 18:46 6-third_line*
+-rwxr-xr-x 1 VODINA EFEM 197121  36 Mar  7 18:55 8-cwd_state*
+-rw-r--r-- 1 VODINA EFEM 197121  20 Mar  7 10:54 README.md
+-rw-r--r-- 1 VODINA EFEM 197121 835 Mar  7 18:46 iacta
+-rw-r--r-- 1 VODINA EFEM 197121   0 Mar  7 18:56 ls_cwd_content
