@@ -1,0 +1,2 @@
+#!/bin/bash
+sum=$(expr 128 + $TRUEKNOWLEDGE) | printf $sum
