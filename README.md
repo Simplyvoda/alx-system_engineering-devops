@@ -1,2 +1,2 @@
-# alx-system_engineering-devops
- Shell basics
+# alx-system_engineering-devops 😸:smiley:
+ Shell basics for the ALX software engineering programme 
