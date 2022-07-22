@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script creates process and PID file
+
+echo "$$" > /var/run/myscript.pid
+trap "echo 'I hate the kill command'; rm /var/run/myscript.pid; exit" SIGTERM
+trap "echo 'Y U no love me?!'" SIGINT
+trap "rm /var/run/myscript.pid; exit" SIGQUIT
+while true; do
+	echo "To infinity and beyond"
+done
