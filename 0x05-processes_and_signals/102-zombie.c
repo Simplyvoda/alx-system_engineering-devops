@@ -5,6 +5,21 @@
 #include <sys/wait.h>
 
 /**
+ * infinite_while - creates infinite while loop
+ *
+ * Return: 0
+ */
+
+int infinite_while(void)
+{
+	while (1)
+	{
+		sleep(1);
+	}
+	return (0);
+}
+
+/**
  * main - creates 5 zombie processes
  *
  * Return: pid
@@ -29,19 +44,4 @@ int main(void)
 	}
 	infinite_while();
 	return (EXIT_SUCCESS);
-}
-
-/**
- * infinite_while - creates infinite while loop
- *
- * Return: 0
- */
-
-int infinite_while(void)
-{
-	while (1)
-	{
-		sleep(1);
-	}
-	return (0);
 }
