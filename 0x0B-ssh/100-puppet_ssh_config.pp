@@ -1,6 +1,6 @@
 # puppet script to change SSH config file
 include stdlib
-file_line { 'Identity line':
+file_line { 'Declare identity file':
   path    => '/etc/ssh/ssh_config',
   line    => '    IdentityFile ~/.ssh/school',
   replace => true,
