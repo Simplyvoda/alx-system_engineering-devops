@@ -21,7 +21,7 @@ new_config=\
         }
 }"
 
-bash -c 'echo "$new_config" > /etc/nginx/sites-available/default'
+echo "$new_config" > /etc/nginx/sites-available/default
 
 if [ "$(pgrep -c nginx)" -le 0 ];
 then
