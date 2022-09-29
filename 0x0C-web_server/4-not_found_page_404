@@ -3,6 +3,7 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/html
 sudo chmod -R 777 /var/www
 echo 'Hello World' > /var/www/html/index.html
 
