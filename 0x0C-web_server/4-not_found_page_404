@@ -3,36 +3,10 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html
+sudo mkdir -p /var/www/html /var/www/error
 sudo chmod -R 777 /var/www
 echo 'Hello World' > /var/www/html/index.html
-
-new_config=\
-"server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-        location / {
-                try_files \$uri \$uri/ =404;
-        }
-        error_page 404 /404.html;
-        location  /404.html {
-            internal;
-        }
-        
-        if (\$request_filename ~ redirect_me){
-            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-        }
-}
-"
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-echo "$new_config" > /etc/nginx/sites-available/default
-
-if [ "$(pgrep nginx)" -le 0 ];
-then
-    service nginx start
-else
-    service nginx restart
-fi;
+echo "Ceci n'est pas une page" > /var/www/error/404.html
+sed -i '/server_name _/a location /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; }' /etc/nginx/sites-available/default
+sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
+service nginx restart
