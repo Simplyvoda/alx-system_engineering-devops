@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-#configure a server to have a custom 404 page
+# installs nginx and customs page 404
 sudo apt-get update
 sudo apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html /var/www/error
+sudo ufw allow 'Nginx HTTP'
+sudo mkdir /var/www/error
+sudo chmod -R 755 /etc/nginx/sites-available/default
 sudo chmod -R 777 /var/www
-echo 'Hello World' > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/error/404.html
-sed -i '/server_name _/a location /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; }' /etc/nginx/sites-available/default
-sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
-service nginx restart
+sudo echo "Ceci n'est pas une page" > /var/www/error/404.html
+sudo sed -i '/server_name _/a\  error_page 404 /404.html;\n     location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
+sudo service nginx restart
