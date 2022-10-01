@@ -6,5 +6,5 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo chmod -R 755 /etc/nginx/nginx.conf
-sudo sed -i '/location/b\	add_header X-Served-By $HOSTNAME;' /etc/nginx/nginx.conf
+sudo sed -i "13i\ add_header X-Served-By '$HOSTNAME';" /etc/nginx/nginx.conf
 sudo nginx restart
