@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # generates a MySQL dump and creates a compressed archive of it
-mysqldump --all-databases -u root --password="$1" > backup.sql
+mysqldump -u root -p="$1" --all-databases > backup.sql
 day=$(date +"%d")
 month=$(date +"%m")
 year=$(date +"%Y")
