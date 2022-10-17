@@ -15,7 +15,7 @@ if __name__ == "__main__":
     t_done = [t.get("title") for t in todo_data if t.get("completed") is True]
 
     print(
-            "Employee {} is done with({}/{}):".format(
+            "Employee {} is done with tasks({}/{}):".format(
                 user_data.get('name'),
                 len(t_done),
                 len(todo_data)
