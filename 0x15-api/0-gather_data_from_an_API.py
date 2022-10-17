@@ -9,15 +9,11 @@ import sys
 
 url = "https://jsonplaceholder.typicode.com"
 
-if __name__ = "__main__":
-    user_data = request.get(url + "/users/{}".format(sys.argv[1])).json()
-    todo_res = request.get(url + "/todos", params={"userId": sys.argv[1]})
+if __name__ == "__main__":
+    user_data = requests.get(url + "/users/{}".format(sys.argv[1])).json()
+    todo_res = requests.get(url + "/todos", params={"userId": sys.argv[1]})
     todo_data = todo_res.json()
-    todo_done = []
-    for i in todo_data:
-        if todo_data["completed"] == true:
-            todo_done.append(todo_data[i])
-
+    todo_done = [t.get("title") for t in todo_data if t.get("completed") is True]
 
     print(
             "Employee {} is done with ({}/{}):".format(
@@ -26,5 +22,4 @@ if __name__ = "__main__":
                 len(todo_data)
             )
         )
-    for todo_done in todos_done:
-        print('\t {}'.format(todo_done.get('title')))
+    [print("\t {}".format(c)) for c in todo_done]
